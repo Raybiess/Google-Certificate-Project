@@ -1,0 +1,460 @@
+-- Creating Tables to load data into
+CREATE TABLE may22 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE jun22 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE jul22 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE aug22 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE sep22 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE oct22 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE nov22 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE dec22 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE jan23 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE feb23 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE mar23 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+CREATE TABLE apr23 (
+	ride_id VARCHAR(255),
+    rideable_type VARCHAR(255),
+    started_at DATETIME,
+    ended_at DATETIME,
+    start_station_name VARCHAR(255),
+    start_station_id VARCHAR(255),
+    end_station_name VARCHAR(255),
+    end_station_id VARCHAR(255),
+    start_lat FLOAT,
+    start_lng FLOAT,
+    end_lat FLOAT,
+    end_lng FLOAT,
+    member_casual VARCHAR(255)
+    );
+-- Loading data into their respective tables
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202205_divvy_tripdata.csv'
+	INTO TABLE may22
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(@started_at, ''),
+	ended_at = NULLIF(@ended_at, ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202206_divvy_tripdata.csv'
+	INTO TABLE jun22
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(@started_at, ''),
+	ended_at = NULLIF(@ended_at, ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202207_divvy_tripdata.csv'
+	INTO TABLE jul22
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(@started_at, ''),
+	ended_at = NULLIF(@ended_at, ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202208_divvy_tripdata.csv'
+	INTO TABLE aug22
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(@started_at, ''),
+	ended_at = NULLIF(@ended_at, ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202209_divvy_tripdata.csv'
+	INTO TABLE sep22
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(@started_at, ''),
+	ended_at = NULLIF(@ended_at, ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202210_divvy_tripdata.csv'
+	INTO TABLE oct22
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(@started_at, ''),
+	ended_at = NULLIF(@ended_at, ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+
+-- Found error in datetime format in started_at & ended_at, Error(additional " in datetime value)
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202211_divvy_tripdata.csv'
+	INTO TABLE nov22
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(REPLACE(@started_at, '"', ''), ''),
+    ended_at = NULLIF(REPLACE(@ended_at, '"', ''), ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202212_divvy_tripdata.csv'
+	INTO TABLE dec22
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(REPLACE(@started_at, '"', ''), ''),
+    ended_at = NULLIF(REPLACE(@ended_at, '"', ''), ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202301_divvy_tripdata.csv'
+	INTO TABLE jan23
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(REPLACE(@started_at, '"', ''), ''),
+    ended_at = NULLIF(REPLACE(@ended_at, '"', ''), ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202302_divvy_tripdata.csv'
+	INTO TABLE feb23
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(REPLACE(@started_at, '"', ''), ''),
+    ended_at = NULLIF(REPLACE(@ended_at, '"', ''), ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202303_divvy_tripdata.csv'
+	INTO TABLE mar23
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(REPLACE(@started_at, '"', ''), ''),
+    ended_at = NULLIF(REPLACE(@ended_at, '"', ''), ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
+LOAD DATA 
+	INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Google cert projects/Cyclist_trips/202304_divvy_tripdata.csv'
+	INTO TABLE apr23
+	FIELDS TERMINATED BY ','
+	LINES TERMINATED BY '\n'
+	IGNORE 1 ROWS
+	(@ride_id, @rideable_type, @started_at, @ended_at, @start_station_name, 
+	@start_station_id, @end_station_name, @end_station_id, @start_lat, @start_lng,
+	@end_lat, @end_lng, @member_casual)
+	SET
+	ride_id = NULLIF(@ride_id, ''),
+	rideable_type = NULLIF(@rideable_type, ''),
+	started_at = NULLIF(REPLACE(@started_at, '"', ''), ''),
+    ended_at = NULLIF(REPLACE(@ended_at, '"', ''), ''),
+	start_station_name = NULLIF(@start_station_name, ''),
+	start_station_id = NULLIF(@start_station_id, ''),
+	end_station_name = NULLIF(@end_station_name, ''),
+	end_station_id = NULLIF(@end_station_id, ''),
+	start_lat = NULLIF(@start_lat, ''),
+	start_lng = NULLIF(@start_lng, ''),
+	end_lat = NULLIF(@end_lat, ''),
+	end_lng = NULLIF(@end_lng, ''),
+	member_casual = NULLIF(@member_casual, '');
