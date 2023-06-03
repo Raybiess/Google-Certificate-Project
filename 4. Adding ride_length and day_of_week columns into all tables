@@ -1,0 +1,52 @@
+-- Adding ride_length & day_of_week (columns) to all tables
+ALTER TABLE twelvemonths
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE may22
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE jun22
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE jul22
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE aug22
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE sep22
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE oct22
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE nov22
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE dec22
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE jan23
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE feb23
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE mar23
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
+
+ALTER TABLE apr23
+ADD COLUMN ride_length TIME,
+ADD COLUMN day_of_week INT;
