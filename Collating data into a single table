@@ -1,0 +1,60 @@
+-- Inserting data from all months into the twelvemonths table 
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.may22;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.jun22;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.jul22;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.aug22;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.sep22;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.oct22;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.nov22;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.dec22;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.jan23;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.feb23;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.mar23;
+
+INSERT INTO cyclist.twelvemonths
+SELECT 
+	*
+FROM cyclist.apr23;
