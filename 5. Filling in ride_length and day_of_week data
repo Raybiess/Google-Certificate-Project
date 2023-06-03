@@ -1,0 +1,69 @@
+-- Increased DBMS connection timeout timing (from 60s to 600s) to accomodate the amount of data being UPDATED into the tables
+-- Exiting MySQL safe update mode, in order to update tables without primary keys
+SET SQL_SAFE_UPDATES = 0;
+
+-- Adding more in-depth information on our data (filling in data to new columns)
+UPDATE cyclist.twelvemonths
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+
+UPDATE cyclist.may22
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+
+UPDATE cyclist.jun22
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.jul22
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.aug22
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.sep22
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.oct22
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.nov22
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.dec22
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.jan23
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.feb23
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.mar23
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
+    
+UPDATE cyclist.apr23
+SET 
+	ride_length = TIMEDIFF(ended_at, started_at),
+    day_of_week = WEEKDAY(ended_at);
