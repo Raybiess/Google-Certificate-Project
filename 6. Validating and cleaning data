@@ -1,5 +1,21 @@
+-- Changing member_casual to customer_type
+ALTER TABLE twelvemonths
+CHANGE COLUMN member_casual customer_type VARCHAR(255);
+
+-- Looking at distinct rideable_type and customer_type
+SELECT 
+	DISTINCT rideable_type, customer_type
+FROM twelvemonths;
+
+-- Dropping double quotation marks (") in our rideable_type and customer_type
+UPDATE twelvemonths
+SET
+	rideable_type = REPLACE(rideable_type, '"', ''),
+    customer_type = REPLACE(customer_type, '"', '');
+
 -- Taking a look at all values based on our metrics
-SELECT *
+SELECT 
+  *
 FROM twelvemonths
 WHERE (start_lat = end_lat AND start_lng = end_lat) OR ride_length <= 0;
 
