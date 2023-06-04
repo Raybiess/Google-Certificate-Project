@@ -1,0 +1,11 @@
+-- Taking a look at all values based on our metrics
+SELECT *
+FROM twelvemonths
+WHERE (start_lat = end_lat AND start_lng = end_lat) OR ride_length <= 0;
+
+-- Exiting MySQL safe update mode, in order to update tables without primary keys
+SET SQL_SAFE_UPDATES = 0;
+
+-- Found ride_length <= 0, and will be deleting these rows
+DELETE FROM twelvemonths
+WHERE (start_lat = end_lat AND start_lng = end_lat) OR ride_length <= 0;
